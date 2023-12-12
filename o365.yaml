@@ -1,0 +1,9 @@
+accounts:
+  - account_name: Saitcho # Do not use email address or spaces
+    client_id: "c28a932a-1d79-4ef5-a513-ee9b4db478bd"
+    client_secret: !secret client_secret
+    alt_auth_method: False
+    enable_update: False
+    todo_sensors:
+      enabled: False
+      enable_update: False # set this to true if you want to be able to create new tasks

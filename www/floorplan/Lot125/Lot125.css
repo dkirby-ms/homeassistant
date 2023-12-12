@@ -1,0 +1,25 @@
+.entitystate-on {
+  opacity: 1 !important;;
+  fill: rgb(40, 236, 33) !important;
+}
+
+.entitystate-off {
+  opacity: .7 !important;;
+  fill: rgb(16, 17, 17) !important;
+}
+
+.motion-on {
+  opacity: .9 !important;
+}
+
+.motion-off {
+  opacity: 0 !important;
+}
+
+.connect-on {
+  opacity: 0 !important;
+}
+
+.connect-off {
+  opacity: 1 !important;
+}

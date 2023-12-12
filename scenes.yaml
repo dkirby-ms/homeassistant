@@ -1,0 +1,129 @@
+- id: '1700584148066'
+  name: Away
+  entities:
+    climate.front:
+      hvac_modes:
+      - 'off'
+      - cool
+      - heat
+      min_temp: 50
+      max_temp: 99
+      fan_modes:
+      - 'on'
+      - auto
+      - diffuse
+      preset_modes:
+      - none
+      - away
+      - Hold
+      current_temperature: 76
+      temperature: 84
+      target_temp_high:
+      target_temp_low:
+      current_humidity: 49
+      fan_mode: auto
+      hvac_action: idle
+      preset_mode: Hold
+      fan_action: idle
+      permanent_hold: true
+      dr_phase: -1
+      friendly_name: FRONT
+      supported_features: 27
+      state: cool
+    climate.rear_tstat:
+      hvac_modes:
+      - 'off'
+      - cool
+      - heat
+      min_temp: 50
+      max_temp: 99
+      fan_modes:
+      - 'on'
+      - auto
+      - diffuse
+      preset_modes:
+      - none
+      - away
+      - Hold
+      current_temperature: 76
+      temperature: 84
+      target_temp_high:
+      target_temp_low:
+      current_humidity: 55
+      fan_mode: auto
+      hvac_action: idle
+      preset_mode: Hold
+      fan_action: idle
+      permanent_hold: true
+      dr_phase: -1
+      friendly_name: REAR
+      supported_features: 27
+      state: cool
+  icon: mdi:home-export-outline
+  metadata: {}
+- id: '1700584230990'
+  name: Home
+  entities:
+    climate.front:
+      hvac_modes:
+      - 'off'
+      - cool
+      - heat
+      min_temp: 50
+      max_temp: 99
+      fan_modes:
+      - 'on'
+      - auto
+      - diffuse
+      preset_modes:
+      - none
+      - away
+      - Hold
+      current_temperature: 76
+      temperature: 76
+      target_temp_high:
+      target_temp_low:
+      current_humidity: 49
+      fan_mode: auto
+      hvac_action: idle
+      preset_mode: Hold
+      fan_action: idle
+      permanent_hold: true
+      dr_phase: -1
+      friendly_name: FRONT
+      supported_features: 27
+      state: cool
+    climate.rear_tstat:
+      hvac_modes:
+      - 'off'
+      - cool
+      - heat
+      min_temp: 50
+      max_temp: 99
+      fan_modes:
+      - 'on'
+      - auto
+      - diffuse
+      preset_modes:
+      - none
+      - away
+      - Hold
+      current_temperature: 76
+      temperature: 76
+      target_temp_high:
+      target_temp_low:
+      current_humidity: 55
+      fan_mode: auto
+      hvac_action: idle
+      preset_mode: Hold
+      fan_action: idle
+      permanent_hold: true
+      dr_phase: -1
+      friendly_name: REAR
+      supported_features: 27
+      state: cool
+  icon: mdi:home
+  metadata: {}
+
+
+  

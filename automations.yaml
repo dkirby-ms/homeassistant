@@ -1,0 +1,264 @@
+- id: '1700856617441'
+  alias: Dinner Time
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.dinner_time
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.den
+    data:
+      media_content_id: media-source://tts/tts.piper?message=Boys%2C+it+is+time+to+eat+dinner.+Please+wash+hands+and+get+in+your+seats.&language=en_GB&voice=en_GB-alan-low
+      media_content_type: provider
+    metadata:
+      title: Boys, it is time to eat dinner. Please wash hands and get in your seats.
+      thumbnail: https://brands.home-assistant.io/_/tts/logo.png
+      media_class: app
+      children_media_class:
+      navigateIds:
+      - {}
+      - media_content_type: app
+        media_content_id: media-source://tts
+      - media_content_type: provider
+        media_content_id: media-source://tts/tts.piper?message=Boys%2C+it+is+time+to+eat+dinner.+Please+wash+hands+and+get+in+your+seats.&language=en_GB&voice=en_GB-alan-low
+  mode: single
+- id: '1700861564074'
+  alias: Lunch Time
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.lunch_time
+  condition: []
+  action:
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.den
+    data:
+      media_content_id: media-source://tts/tts.piper?message=Boys%2C+it+is+lunch+time.+Lunch%2C+lunch%2C+lunch.+Munch%2C+munch%2C+munch.+Please+take+your+seats.&language=en_GB&voice=en_GB-alan-low
+      media_content_type: provider
+    metadata:
+      title: Boys, it is lunch time. Lunch, lunch, lunch. Munch, munch, munch. Please
+        take your seats.
+      thumbnail: https://brands.home-assistant.io/_/tts/logo.png
+      media_class: app
+      children_media_class:
+      navigateIds:
+      - {}
+      - media_content_type: app
+        media_content_id: media-source://tts
+      - media_content_type: provider
+        media_content_id: media-source://tts/tts.piper?message=Boys%2C+it+is+lunch+time.+Lunch%2C+lunch%2C+lunch.+Munch%2C+munch%2C+munch.+Please+take+your+seats.&language=en_GB&voice=en_GB-alan-low
+  mode: single
+- id: '1700862077439'
+  alias: Say Something button
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.say_something
+  condition: []
+  variables:
+    message: “{{ states('input_text.say_something_tts') }}”
+  action:
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.den
+    data:
+      media_content_id: media-source://tts/tts.piper?message={{ message }}&language=en_US&voice=en_GB-alan-medium
+      media_content_type: provider
+    metadata:
+      title: '{{ message }}'
+      thumbnail: https://brands.home-assistant.io/_/tts/logo.png
+      media_class: app
+      children_media_class:
+      navigateIds:
+      - {}
+      - media_content_type: app
+        media_content_id: media-source://tts
+      - media_content_type: provider
+        media_content_id: media-source://tts/tts.piper?message={{ message }}&language=en_US&voice=en_US-joe-medium
+  mode: single
+- id: '1700868337409'
+  alias: Xmas Lights on at sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.node_4_2
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.node_4
+  - service: light.turn_on
+    target:
+      entity_id: light.smart_rgbtw_bulb_3
+    data:
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      brightness_pct: 75
+  - service: light.turn_on
+    data:
+      rgb_color:
+      - 3
+      - 158
+      - 0
+      brightness_pct: 75
+    target:
+      entity_id: light.smart_rgbtw_bulb_2
+  mode: single
+- id: '1700868408838'
+  alias: Xmas Lights off at 0215
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:15:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.node_4_2
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.node_4
+  - service: light.turn_off
+    target:
+      entity_id: light.smart_rgbtw_bulb_3
+    data: {}
+  - service: light.turn_off
+    target:
+      entity_id: light.smart_rgbtw_bulb_2
+    data: {}
+  mode: single
+- id: '1700881498738'
+  alias: Daily system backup
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition: []
+  action:
+  - service: hassio.backup_full
+    data:
+      compressed: true
+      homeassistant_exclude_database: false
+  mode: single
+- id: '1700883243845'
+  alias: Brush Teeth announcement
+  description: ''
+  trigger:
+  - platform: time
+    at: '19:05:00'
+  action:
+  - service: tts.speak
+    entity_id: tts.piper
+    data:
+      media_player_entity_id: media_player.den
+      message: '{{ message[0] }}'
+      options:
+        voice: '{{ message[1] }}'
+  variables:
+    message: '{{ [  [''请注意。你应该去刷牙。'', ''zh_CN-huayan-medium''],  [''男孩们，你需要去刷牙。马上！'',
+      ''zh_CN-huayan-medium''],  [''10 位牙医中有 10 位建议刷牙和使用牙线。现在是你刷牙的时候了！'', ''zh_CN-huayan-medium''],  [''Boys,
+      it is time to brush teeth. Please get to it.'', ''en_GB-alan-low''],  [''It
+      is time to brush your teeth. You dont want to have bad breath, do you?'',''en_GB-alan-low''
+      ], [''Boys, please stop what you are doing and go brush your teeth now. Thank
+      you.'', ''en_GB-alan-low'' ]  ] | random }}'
+  mode: single
+- id: '1700883243846'
+  alias: Breakfast chatter
+  description: ''
+  variables:
+    message: '{{ [ [''早上好！妈妈早餐煮豆浆和油条了吗？'', ''zh_CN-huayan-medium''], [''我希望你吃了早餐。保持良好的营养很重要！'',
+      ''zh_CN-huayan-medium''], [''你的早餐怎么样？你有没有粽子？你应该在某个时候尝试一下。'', ''zh_CN-huayan-medium''],
+      [''I hope you enjoyed your breakfast this morning. You will need energy to get
+      through your day!'', ''en_GB-alan-low'' ], [''Did you have bacon and potato
+      cakes this morning, or was it oatmeal and yogurt? Either way, it smells delicious.'',
+      ''en_GB-alan-low'' ], [''Does anyone need more coffee? I can top your cup off.'',
+      ''en_GB-alan-low'' ] ] | random }}'
+  trigger:
+  - platform: time
+    at: 07:45:00
+  action:
+  - service: tts.speak
+    entity_id: tts.piper
+    data:
+      media_player_entity_id: media_player.den
+      message: '{{ message[0] }}'
+      options:
+        voice: '{{ message[1] }}'
+  mode: single
+- id: '1702088969429'
+  alias: Light Christmas tree
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00:00
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.mini_smart_plug_2
+  mode: single
+- id: '1702089067349'
+  alias: Unlight Christmas Tree
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.mini_smart_plug_2
+      device_id: []
+      area_id: []
+    data: {}
+  mode: single
+- id: '1702224462032'
+  alias: Porch light on motion when its dark
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light_afterdark.yaml
+    input:
+      motion_entity: binary_sensor.lot125_doorbell_motion
+      light_target:
+        entity_id: light.s2_on_off_switch
+- id: '1702247760903'
+  alias: Flood Lights on motion after dark
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light_afterdark.yaml
+    input:
+      motion_entity: binary_sensor.lot125_front_door_approach_motion
+      light_target:
+        entity_id: light.s2_on_off_switch_2
+- id: '1702256700939'
+  alias: Living Room LEDs Rainbow Mode
+  description: Three LEDs Strips in Living Room
+  trigger:
+  - hours: '*'
+    minutes: '*'
+    platform: time_pattern
+    seconds: /1
+  condition: []
+  action:
+  - service: script.rainbow_light
+    data:
+      entity: light.3_bulb_desk_lamp
+  mode: single

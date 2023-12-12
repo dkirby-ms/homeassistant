@@ -1,0 +1,11 @@
+# services.yaml
+set_state:
+  name: Set entity state
+  description: Set an entity state.
+  fields:
+    entity_id:
+      description: The entity to set.
+      example: binary_sensor.motion1
+    state:
+      description: The state to set
+      example: off
