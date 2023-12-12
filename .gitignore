@@ -1,0 +1,13 @@
+.storage/*
+custom_components/*
+esphome/*
+image/*
+tts/*
+secrets.yaml
+www/community/*
+notebooks/*
+home-assistant_v2*
+home-assistant.log*
+.HA_VERSION
+.shopping_list.json
+o365_storage/*
