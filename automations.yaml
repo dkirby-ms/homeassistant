@@ -249,8 +249,8 @@
       light_target:
         entity_id: light.s2_on_off_switch_2
 - id: '1702256700939'
-  alias: Living Room LEDs Rainbow Mode
-  description: Three LEDs Strips in Living Room
+  alias: Desk Lamp Random Colors
+  description: Light show
   trigger:
   - hours: '*'
     minutes: '*'

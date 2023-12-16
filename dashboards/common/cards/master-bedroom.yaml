@@ -1,0 +1,19 @@
+type: custom:button-card
+template: container
+color: "#0090FF"
+name: Master Bedroom
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: light.mini_smart_plug_2
+          name: Bedside Lamp Left
+          template: standard
+          icon: mdi:lamp
+          type: custom:button-card
+        - entity: light.mini_smart_plug_3
+          name: Bedside Lamp Right
+          template: standard
+          icon: mdi:lamp
+          type: custom:button-card

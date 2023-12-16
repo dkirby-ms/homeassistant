@@ -1,0 +1,47 @@
+template: standard
+show_last_changed: true
+color_type: icon
+extra_styles: |
+  [[[ return `
+    @keyframes pulse1 {
+      20% {
+        background-color: ${variables.color_initial};
+      }
+    }
+    @keyframes pulse2 {
+      20% {
+        background-color: ${variables.color_extended};
+      }
+    }
+    @keyframes color {
+      0% {
+        color: unset;
+        opacity: 0.5
+      }
+      99% {
+        color: unset;
+        opacity: 0.5
+      }
+      100% {
+        color: ${variables.color_extended};
+      }
+    }
+  `]]]
+variables:
+  color_initial: var(--paper-item-icon-active-color)
+  color_extended: rgba(240,52,52, 0.9)
+  color_seconds: 60
+state:
+  - value: "on"
+    id: value_on
+    styles:
+      card:
+        - animation: >-
+            [[[ return `pulse1 1s ${variables.color_seconds}, pulse2 1s
+            ${variables.color_seconds}s infinite` ]]]
+      icon:
+        - color: "[[[ return variables.color_extended ]]]"
+        - opacity: 1
+        - animation: "[[[ return `color ${variables.color_seconds}s 1` ]]]"
+      name:
+        - font-weight: bold

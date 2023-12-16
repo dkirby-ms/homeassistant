@@ -1,0 +1,104 @@
+template: standard
+color_type: icon
+tap_action:
+  action: none
+styles:
+  card:
+    - background-color: rgba(0,0,0,0.3)
+  icon:
+    - color: white
+  grid:
+    - grid-template-areas: '"i opt1 opt2 opt3 opt4" "n opt1 opt2 opt3 opt4"'
+    - grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  custom_fields:
+    opt1:
+      - margin: 0.1em
+      - overflow: visible
+    opt2:
+      - margin: 0.1em
+      - overflow: visible
+    opt3:
+      - margin: 0.1em
+      - overflow: visible
+    opt4:
+      - margin: 0.1em
+      - overflow: visible
+variables:
+  option_template: fan-option
+  option_button_on_color: var(--paper-item-icon-active-color)
+  option_text_on_color: yellow
+  option_button_off_color: var(--paper-card-background-color)
+  option_text_off_color: gray
+  option1_name: "OFF"
+  option1_set_value: 0
+  option1_range_start: 0
+  option1_range_stop: 0
+  option2_name: LOW
+  option2_set_value: 20
+  option2_range_start: 1
+  option2_range_stop: 35
+  option3_name: MED
+  option3_set_value: 50
+  option3_range_start: 36
+  option3_range_stop: 80
+  option4_name: HIGH
+  option4_set_value: 100
+  option4_range_start: 81
+  option4_range_stop: 100
+custom_fields:
+  opt1:
+    card:
+      type: custom:button-card
+      entity: "[[[ return variables.entity ]]]"
+      template: "[[[ return variables.option_template ]]]"
+      name: "[[[ return variables.option1_name ]]]"
+      variables:
+        set_value: "[[[ return variables.option1_set_value ]]]"
+        range_start: "[[[ return variables.option1_range_start ]]]"
+        range_stop: "[[[ return variables.option1_range_stop ]]]"
+        option_button_on_color: "[[[ return variables.option_button_on_color ]]]"
+        option_button_off_color: "[[[ return variables.option_button_off_color ]]]"
+        option_text_on_color: "[[[ return variables.option_text_on_color ]]]"
+        option_text_off_color: "[[[ return variables.option_text_off_color ]]]"
+  opt2:
+    card:
+      type: custom:button-card
+      entity: "[[[ return variables.entity ]]]"
+      template: "[[[ return variables.option_template ]]]"
+      name: "[[[ return variables.option2_name ]]]"
+      variables:
+        set_value: "[[[ return variables.option2_set_value ]]]"
+        range_start: "[[[ return variables.option2_range_start ]]]"
+        range_stop: "[[[ return variables.option2_range_stop ]]]"
+        option_button_on_color: "[[[ return variables.option_button_on_color ]]]"
+        option_button_off_color: "[[[ return variables.option_button_off_color ]]]"
+        option_text_on_color: "[[[ return variables.option_text_on_color ]]]"
+        option_text_off_color: "[[[ return variables.option_text_off_color ]]]"
+  opt3:
+    card:
+      type: custom:button-card
+      entity: "[[[ return variables.entity ]]]"
+      template: "[[[ return variables.option_template ]]]"
+      name: "[[[ return variables.option3_name ]]]"
+      variables:
+        set_value: "[[[ return variables.option3_set_value ]]]"
+        range_start: "[[[ return variables.option3_range_start ]]]"
+        range_stop: "[[[ return variables.option3_range_stop ]]]"
+        option_button_on_color: "[[[ return variables.option_button_on_color ]]]"
+        option_button_off_color: "[[[ return variables.option_button_off_color ]]]"
+        option_text_on_color: "[[[ return variables.option_text_on_color ]]]"
+        option_text_off_color: "[[[ return variables.option_text_off_color ]]]"
+  opt4:
+    card:
+      type: custom:button-card
+      entity: "[[[ return variables.entity ]]]"
+      template: "[[[ return variables.option_template ]]]"
+      name: "[[[ return variables.option4_name ]]]"
+      variables:
+        set_value: "[[[ return variables.option4_set_value ]]]"
+        range_start: "[[[ return variables.option4_range_start ]]]"
+        range_stop: "[[[ return variables.option4_range_stop ]]]"
+        option_button_on_color: "[[[ return variables.option_button_on_color ]]]"
+        option_button_off_color: "[[[ return variables.option_button_off_color ]]]"
+        option_text_on_color: "[[[ return variables.option_text_on_color ]]]"
+        option_text_off_color: "[[[ return variables.option_text_off_color ]]]"

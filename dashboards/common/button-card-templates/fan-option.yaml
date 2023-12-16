@@ -1,0 +1,22 @@
+template: option-button
+show_icon: true
+tap_action:
+  action: call-service
+  service: fan.turn_on
+  service_data:
+    entity_id: entity
+    percentage: "[[[ return variables.set_value ]]]"
+state:
+  - operator: default
+    styles:
+      card:
+        - background-color: "[[[ return variables.option_button_off_color ]]]"
+        - color: "[[[ return variables.option_text_off_color ]]]"
+  - operator: template
+    value: >-
+      [[[ return (entity.attributes.percentage) >= variables.range_start &&
+      (entity.attributes.percentage) <= variables.range_stop ]]]
+    styles:
+      card:
+        - background-color: "[[[ return variables.option_button_on_color ]]]"
+        - color: "[[[ return variables.option_text_on_color ]]]"

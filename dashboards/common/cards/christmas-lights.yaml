@@ -1,0 +1,34 @@
+type: custom:button-card
+template: container
+color: "#FC0000"
+name: Christmas Lights
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: switch.mini_smart_plug_2
+          name: Tree
+          template: standard
+          icon: mdi:pine-tree
+          type: custom:button-card
+        - entity: switch.node_4
+          name: Lightshow
+          template: standard
+          icon: mdi:string-lights
+          type: custom:button-card
+        - entity: switch.node_4_2
+          name: String Lights
+          template: standard
+          icon: mdi:string-lights
+          type: custom:button-card
+        - entity: light.smart_rgbtw_bulb_3
+          name: Sconce L
+          template: standard
+          icon: mdi:wall-sconce-round
+          type: custom:button-card
+        - entity: light.smart_rgbtw_bulb_2
+          name: Sconce R
+          template: standard
+          icon: mdi:wall-sconce-round
+          type: custom:button-card

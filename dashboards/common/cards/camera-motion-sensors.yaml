@@ -1,0 +1,28 @@
+type: custom:button-card
+template: container
+name: Alerts
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: binary_sensor.lot125_doorbell_motion
+          name: Doorbell
+          template: alerter-dual
+          type: custom:button-card
+        - entity: binary_sensor.lot125_back_patio_motion
+          name: Back Patio
+          template: alerter-dual
+          type: custom:button-card
+        - entity: binary_sensor.lot125_courtyard_motion
+          name: Courtyard
+          template: alerter-dual
+          type: custom:button-card
+        - entity: binary_sensor.lot125_garage_motion
+          name: Garage
+          template: alerter-dual
+          type: custom:button-card
+        - entity: binary_sensor.lot125_front_door_approach_motion
+          name: Front Path
+          template: alerter-dual
+          type: custom:button-card

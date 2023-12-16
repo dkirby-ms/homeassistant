@@ -1,0 +1,12 @@
+title: HomeControlBro
+button_card_templates: !include_dir_named ../common/button-card-templates
+views:
+  - title: Main
+    path: main
+    panel: false
+    cards:
+      - !include ../common/cards/camera-motion-sensors.yaml
+      - !include ../common/cards/christmas-lights.yaml
+      - !include ../common/cards/office-lighting.yaml
+      - !include ../common/cards/outside-lighting.yaml
+      - !include ../common/cards/master-bedroom.yaml

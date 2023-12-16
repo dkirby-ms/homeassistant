@@ -1,0 +1,6 @@
+template: standard
+show_icon: false
+aspect_ratio: 1/1
+styles:
+  card:
+    - border-radius: 20%

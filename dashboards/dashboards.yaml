@@ -1,0 +1,11 @@
+# dashboards/dashboards.yaml
+
+#NOTE: changes in this file require restart, but changes in dashboards
+#      can be refreshed with the UI triple-dot menu option "Refresh"
+dash-homecontrol:
+  mode: yaml
+  title: HomeControlBro
+  show_in_sidebar: true
+  require_admin: true
+  #note: this path is relative to config folder, not folder where this file is
+  filename: dashboards/dash-homecontrol/dash-homecontrol.yaml

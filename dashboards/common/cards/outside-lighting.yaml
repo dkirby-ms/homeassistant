@@ -1,0 +1,19 @@
+type: custom:button-card
+template: container
+color: "#09CC06"
+name: Outside
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: light.s2_on_off_switch
+          name: Porch Light
+          template: standard
+          icon: mdi:lightbulb
+          type: custom:button-card
+        - entity: light.s2_on_off_switch_2
+          name: Front Flood Lights
+          template: standard
+          icon: mdi:light-flood-down
+          type: custom:button-card

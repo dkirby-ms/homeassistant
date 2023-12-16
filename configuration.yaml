@@ -47,4 +47,8 @@ notify:
       - service: mobile_app_sm_s918u
 
 shell_command:
-  delete_old_tts: 'find /root/config/tts/ -maxdepth 1 -type f -mtime +1 -name ''*.piper.WAV'' -exec rm {} -f \;'
+  delete_old_tts: 'find /root/config/tts/ -maxdepth 1 -type f -mtime +1 -name ''*.piper.mp3'' -exec rm {} -f \;'
+
+lovelace:
+  mode: storage
+  dashboards: !include dashboards/dashboards.yaml
