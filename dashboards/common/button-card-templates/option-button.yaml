@@ -4,3 +4,4 @@ aspect_ratio: 1/1
 styles:
   card:
     - border-radius: 20%
+    - font-size: 20px

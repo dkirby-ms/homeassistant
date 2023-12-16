@@ -29,19 +29,19 @@ variables:
   option_text_on_color: yellow
   option_button_off_color: var(--paper-card-background-color)
   option_text_off_color: gray
-  option1_name: "OFF"
+  option1_name: "Off"
   option1_set_value: 0
   option1_range_start: 0
   option1_range_stop: 0
-  option2_name: LOW
+  option2_name: Low
   option2_set_value: 20
   option2_range_start: 1
   option2_range_stop: 35
-  option3_name: MED
+  option3_name: Med
   option3_set_value: 50
   option3_range_start: 36
   option3_range_stop: 80
-  option4_name: HIGH
+  option4_name: High
   option4_set_value: 100
   option4_range_start: 81
   option4_range_stop: 100

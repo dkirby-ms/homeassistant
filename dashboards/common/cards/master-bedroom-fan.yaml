@@ -1,0 +1,13 @@
+type: custom:button-card
+template: container
+color: "#0090FF"
+custom_fields:
+  buttons:
+    card:
+      type: custom:button-card
+      template: presets-off-low-med-hi
+      entity: fan.ceiling_fan
+      name: Ceiling Fan
+      variables:
+        entity: fan.ceiling_fan
+        option_template: fan-option

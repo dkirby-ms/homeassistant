@@ -8,5 +8,8 @@ views:
       - !include ../common/cards/camera-motion-sensors.yaml
       - !include ../common/cards/christmas-lights.yaml
       - !include ../common/cards/office-lighting.yaml
+      - type: vertical-stack
+        cards:
+          - !include ../common/cards/master-bedroom-lights.yaml
+          - !include ../common/cards/master-bedroom-fan.yaml
       - !include ../common/cards/outside-lighting.yaml
-      - !include ../common/cards/master-bedroom.yaml

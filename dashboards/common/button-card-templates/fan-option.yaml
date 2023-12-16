@@ -1,5 +1,4 @@
 template: option-button
-show_icon: true
 tap_action:
   action: call-service
   service: fan.turn_on
@@ -13,10 +12,12 @@ state:
         - background-color: "[[[ return variables.option_button_off_color ]]]"
         - color: "[[[ return variables.option_text_off_color ]]]"
   - operator: template
-    value: >-
+    value: >
       [[[ return (entity.attributes.percentage) >= variables.range_start &&
       (entity.attributes.percentage) <= variables.range_stop ]]]
     styles:
       card:
         - background-color: "[[[ return variables.option_button_on_color ]]]"
         - color: "[[[ return variables.option_text_on_color ]]]"
+        - font-size: 28px
+        - text-transform: uppercase
