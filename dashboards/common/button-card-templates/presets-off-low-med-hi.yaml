@@ -2,6 +2,16 @@ template: standard
 color_type: icon
 tap_action:
   action: none
+entity: fan.ceiling_fan
+state:
+  - value: "off"
+    styles:
+      icon:
+        - animation: null
+  - value: "on"
+    styles:
+      icon:
+        - animation: rotating 2s linear infinite
 styles:
   card:
     - background-color: rgba(0,0,0,0.3)
