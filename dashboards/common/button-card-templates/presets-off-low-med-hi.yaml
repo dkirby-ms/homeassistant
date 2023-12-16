@@ -35,9 +35,9 @@ styles:
       - overflow: visible
 variables:
   option_template: fan-option
-  option_button_on_color: var(--paper-item-icon-active-color)
+  option_button_on_color: black
   option_text_on_color: yellow
-  option_button_off_color: var(--paper-card-background-color)
+  option_button_off_color: rgba(0,0,0,0.3)
   option_text_off_color: gray
   option1_name: "Off"
   option1_set_value: 0

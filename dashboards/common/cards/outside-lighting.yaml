@@ -1,6 +1,6 @@
 type: custom:button-card
 template: container
-color: "#09CC06"
+color: "#00C0DD"
 name: Outside
 custom_fields:
   buttons:
