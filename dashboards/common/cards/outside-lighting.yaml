@@ -17,3 +17,13 @@ custom_fields:
           template: standard
           icon: mdi:light-flood-down
           type: custom:button-card
+        - entity: light.smart_rgbtw_bulb_3
+          name: Garage Sconce L
+          icon: mdi:lightbulb
+          type: custom:button-card
+          template: standard
+        - entity: light.smart_rgbtw_bulb_2
+          name: Garage Sconce R
+          icon: mdi:lightbulb
+          type: custom:button-card
+          template: standard

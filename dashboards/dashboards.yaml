@@ -4,8 +4,8 @@
 #      can be refreshed with the UI triple-dot menu option "Refresh"
 dash-homecontrol:
   mode: yaml
-  title: HomeControlBro
+  title: HomeControl
   show_in_sidebar: true
-  require_admin: true
+  require_admin: false
   #note: this path is relative to config folder, not folder where this file is
   filename: dashboards/dash-homecontrol/dash-homecontrol.yaml
