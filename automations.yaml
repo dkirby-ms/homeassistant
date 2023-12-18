@@ -262,3 +262,39 @@
     data:
       entity: light.3_bulb_desk_lamp
   mode: single
+- id: '1702864289885'
+  alias: Office Lights at night
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light_afterdark.yaml
+    input:
+      motion_entity: binary_sensor.multisensor_6_motion_detection
+      light_target:
+        entity_id: light.mini_smart_plug
+- id: '1702871902204'
+  alias: Turn fan on at 10:35pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:35:00'
+  condition: []
+  action:
+  - service: fan.turn_on
+    target:
+      device_id: 9252f67513053e4bb4e203f0e8e70ed8
+    data:
+      percentage: 100
+  mode: single
+- id: '1702871970484'
+  alias: Turn fan off at 6:25am
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:25:00
+  condition: []
+  action:
+  - service: fan.turn_off
+    target:
+      device_id: 9252f67513053e4bb4e203f0e8e70ed8
+    data: {}
+  mode: single

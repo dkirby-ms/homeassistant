@@ -2,7 +2,6 @@ template: standard
 color_type: icon
 tap_action:
   action: none
-entity: fan.ceiling_fan
 state:
   - value: "off"
     styles:
