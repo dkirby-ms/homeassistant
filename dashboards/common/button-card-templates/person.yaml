@@ -4,7 +4,6 @@ variables:
   person: person.dale_kirby
   mobile_battery_sensor: null
   mobile_battery_state: null
-  mobile_wifi_sensor: null
   proximity_sensor: null
 color_type: icon
 tap_action:
@@ -106,19 +105,5 @@ custom_fields:
         icon="mdi:battery"
         style="width: 20px; height: 20px; color: #888888;">
         </ha-icon> <span><span style="color: var(--text-color-sensor);">${states[variables.mobile_battery_sensor].state}% battery</span></span>`;
-      }
-    ]]]
-  wifi: |
-    [[[
-      if (states['sensor.mobile_wifi_connection'].state =='<not connected>') { 
-        return `<ha-icon
-        icon="mdi:wifi"
-        style="width: 20px; height: 20px; color: var(--text-wifi-color-sensor);">
-        </ha-icon> <span><span style="color: var(--text-wifi-color-sensor);">Disconnected</span></span>`; 
-      } else {
-        return `<ha-icon
-        icon="mdi:wifi"
-        style="width: 20px; height: 20px; color: #888888;">
-        </ha-icon> <span><span style="color: var(--text-color-sensor);">${states['sensor.mobile_wifi_connection'].state}</span></span>`;
       }
     ]]]
