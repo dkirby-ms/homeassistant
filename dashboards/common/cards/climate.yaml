@@ -1,0 +1,21 @@
+type: custom:button-card
+template: container
+color: "#A7A7A7"
+name: Climate Control
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: bigtemp
+          entity: climate.front
+          variables:
+            device_name: Front
+            color: "dark gray"
+        - type: "custom:button-card"
+          template: bigtemp
+          entity: climate.rear_tstat
+          variables:
+            device_name: Rear
+            color: "dark gray"

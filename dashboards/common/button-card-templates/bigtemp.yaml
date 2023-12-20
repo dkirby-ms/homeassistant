@@ -1,0 +1,290 @@
+variables:
+  hide: false
+  color: 'rgba(0,0,0,0.3)'
+  device_name: Set at
+  alt_humidity_entity: null
+  alt_humidity_attr: null
+  color_setpoint_off: 'rgba(0,0,0,0.4)'
+  color_setpoint_idle: 'rgba(144,238,144,0.6)'
+  color_setpoint_cool: 'rgba(0,0,255,0.6)'
+  color_setpoint_heat: 'rgba(255,0,0,0.6)'
+  color_setpoint_wait: 'rgba(255,255,0,0.6)'
+  icon_setpoint_off: 'mdi:thermometer-off'
+  icon_setpoint_idle: null
+  icon_setpoint_cool: 'mdi:snowflake'
+  icon_setpoint_heat: 'mdi:fire'
+  icon_setpoint_wait: 'mdi:timer-sand'
+  text_setpoint_off: white
+  text_setpoint_idle: black
+  text_setpoint_cool: white
+  text_setpoint_heat: white
+  text_setpoint_wait: black
+  icon_mode_disabled: false
+show_icon: true
+icon: "mdi:fan"
+show_state: true
+state_display: |-
+  [[[ 
+    return Math.trunc(entity.attributes.current_temperature).toString()+"°" 
+  ]]]
+custom_fields:
+  device: |
+    [[[
+      return `<div style="line-height:1">${variables.device_name}</div>`;
+    ]]]
+  humidity:
+    card:
+      type: "custom:button-card"
+      show_icon: true
+      icon: "mdi:water-percent"
+      show_name: false
+      show_state: true
+      state_display: |
+        [[[
+          if (entity.attributes.current_humidity) 
+            return entity.attributes.current_humidity;
+          var alt = variables.alt_humidity_entity && states[variables.alt_humidity_entity];
+          var attr = alt && alt.attributes[variables.alt_humidity_attr];
+          return attr;
+        ]]]
+      styles:
+        grid:
+          - grid-template-areas: '"s i"'
+        img_cell:
+          - display: contents
+        state:
+          - font-size: 0.8em
+          - align-self: flex-end
+        card:
+          - padding: 0
+          - padding-left: 2px
+          - background-color: "rgba(0,0,0,0.6)"
+        icon:
+          - width: 18px
+          - height: 15px
+          - margin-top: "-4px"
+          - margin-left: "-4px"
+          - margin-right: "-3px"
+  mode:
+    card:
+      type: "custom:button-card"
+      show_icon: true
+      show_name: false
+      show_state: false
+      icon: |
+        [[[
+          if(variables.icon_setpoint_idle || variables.icon_mode_disabled) return '';
+          switch(entity.attributes.hvac_action) {
+            case "cool":
+            case "cooling":
+            case "heat":
+            case "heating":
+              return '';
+            default:
+              if (entity.attributes.hvac_mode == 3)
+                return '';
+              switch(entity.state){
+                case "heat":
+                  return variables.icon_setpoint_heat;
+                case "cool":
+                  return variables.icon_setpoint_cool;
+              }
+          }
+        ]]]
+      styles:
+        card:
+          - background-color: transparent
+        icon:
+          - width: 18px
+          - color: white
+  setpoint:
+    card:
+      type: "custom:button-card"
+      show_icon: true
+      show_name: true
+      show_state: true
+      state_display: |
+        [[[ 
+          return entity.attributes.temperature 
+            ? entity.attributes.temperature + "°" 
+            : entity.attributes.target_temp_low
+              ? entity.attributes.target_temp_low + "°" 
+              : ''
+        ]]]
+      name: |
+        [[[ 
+          return entity.attributes.target_temp_high
+            ? entity.attributes.target_temp_high + "°" 
+            : ''
+        ]]]
+      icon: |
+        [[[
+          switch(entity.attributes.hvac_action) {
+            case "cool":
+            case "cooling":
+              return variables.icon_setpoint_cool;
+            case "heat":
+            case "heating":
+              return variables.icon_setpoint_heat;
+            default:
+              if (entity.attributes.hvac_mode == 3)
+                return variables.icon_setpoint_wait;
+              return entity.state != "off"
+                ? variables.icon_setpoint_idle
+                : entity.attributes.temperature
+                  ? ''
+                  : variables.icon_setpoint_off 
+          }
+        ]]]
+      styles:
+        icon:
+          - width: 18px
+          - color: |
+              [[[ 
+                switch(entity.attributes.hvac_action) {
+                  case "cool":
+                  case "cooling":
+                    return variables.text_setpoint_cool;
+                  case "heat":
+                  case "heating":
+                    return variables.text_setpoint_heat;
+                  default:
+                    if (entity.attributes.hvac_mode == 3)
+                      return variables.text_setpoint_wait;
+                    return entity.state == "off"
+                      ? variables.text_setpoint_off
+                      : variables.text_setpoint_idle 
+                }
+              ]]]
+        state:
+          - font-size: 0.8em
+          - color: |
+              [[[ 
+                switch(entity.attributes.hvac_action) {
+                  case "cool":
+                  case "cooling":
+                    return variables.text_setpoint_cool;
+                  case "heat":
+                  case "heating":
+                    return variables.text_setpoint_heat;
+                  default:
+                    if (entity.attributes.hvac_mode == 3)
+                      return variables.text_setpoint_wait;
+                    return entity.state == "off"
+                      ? variables.text_setpoint_off
+                      : variables.text_setpoint_idle 
+                }
+              ]]]
+        name:
+          - font-size: 0.8em
+          - color: |
+              [[[ 
+                switch(entity.attributes.hvac_action) {
+                  case "cool":
+                  case "cooling":
+                    return variables.text_setpoint_cool;
+                  case "heat":
+                  case "heating":
+                    return variables.text_setpoint_heat;
+                  default:
+                    if (entity.attributes.hvac_mode == 3)
+                      return variables.text_setpoint_wait;
+                    return entity.state == "off"
+                      ? variables.text_setpoint_off
+                      : variables.text_setpoint_idle 
+                }
+              ]]]
+        card:
+          - padding: 0 2px
+          - background-color: |
+              [[[ 
+                switch(entity.attributes.hvac_action) {
+                  case "cool":
+                  case "cooling":
+                    return variables.color_setpoint_cool;
+                  case "heat":
+                  case "heating":
+                    return variables.color_setpoint_heat;
+                  default:
+                    if (entity.attributes.hvac_mode == 3)
+                      return variables.color_setpoint_wait;
+                    return entity.state == "off"
+                      ? variables.color_setpoint_off
+                      : variables.color_setpoint_idle 
+                }
+              ]]]
+state:
+  - id: value_any
+    operator: "!="
+    value: all
+    spin: true
+styles:
+  card:
+    - background-color: '[[[ return variables.color || "transparent" ]]]'
+    - overflow: visible
+    - box-shadow: none
+    - padding: 2px 0 5px 2px
+    - display: '[[[ return variables.hide ? "none" : "flex" ]]]'
+    - width: fit-content
+    - margin-right: 15px
+  grid:
+    - display: contents
+  img_cell:
+    - display: contents
+  icon:
+    - width: 70%
+    - position: absolute
+    - left: 3px
+    - color: silver
+    - display: >-
+        [[[ return entity.attributes.fan_state &&
+        entity.attributes.fan_state == 1 ? "block" : "none" ]]]
+  state:
+    - color: var(--primary-text-color)
+    - font-size: 3.5em
+    - text-shadow: 0 0 2px black
+    - overflow: visible
+    - z-index: 1
+    - margin-top: "-10px"
+  name:
+    - color: var(--primary-text-color)
+    - text-shadow: 0 0 2px black
+    - overflow: visible
+    - font-size: 0.75em
+    - font-weight: 600
+    - position: absolute
+    - transform: rotate(90deg)
+    - transform-origin: right bottom
+    - bottom: 0
+    - right: 0
+    - z-index: 10
+  custom_fields:
+    device:
+      - text-shadow: 0 0 0.2em black
+      - overflow: visible
+      - font-size: 0.6em
+      - position: absolute
+      - bottom: 1px
+      - right: 28px
+      - z-index: 1
+    mode:
+      - position: absolute
+      - bottom: 18px
+      - right: 2px
+    setpoint:
+      - position: absolute
+      - bottom: 0
+      - right: 0
+      - z-index: 1
+    humidity:
+      - z-index: 2
+      - position: absolute
+      - bottom: 0
+      - left: 0
+      - display: |
+          [[[ 
+            return entity.attributes.current_humidity == undefined 
+                    && !variables.alt_humidity_entity
+              ? "none" 
+              : "flex" 
+          ]]]

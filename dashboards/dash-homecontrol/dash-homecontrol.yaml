@@ -13,3 +13,5 @@ views:
           - !include ../common/cards/master-bedroom-lights.yaml
           - !include ../common/cards/master-bedroom-fan.yaml
       - !include ../common/cards/outside-lighting.yaml
+      - !include ../common/cards/climate.yaml
+      - !include ../common/cards/people.yaml

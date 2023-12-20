@@ -1,0 +1,26 @@
+type: custom:button-card
+template: container
+color: "#A7A7A7"
+name: People
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          template: person
+          entity: person.dale_kirby
+          variables:
+            color: "dark blue"
+            mobile_battery_sensor: sensor.sm_s918u_battery_level
+            mobile_battery_state: sensor.sm_s918u_battery_state
+            mobile_wifi_sensor: sensor.sm_s918u_mobile_wifi
+            proximity_sensor: proximity.dale_home
+        - type: "custom:button-card"
+          template: person
+          entity: person.cecilia_cheng
+          variables:
+            color: "dark red"
+            mobile_battery_sensor: sensor.iphone_battery_level
+            mobile_battery_state: sensor.iphone_battery_state
+            proximity_sensor: proximity.cc_home
