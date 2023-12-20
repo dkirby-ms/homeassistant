@@ -1,0 +1,50 @@
+square: false
+type: grid
+cards:
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
+    entity: camera.lot125_back_patio
+    image: /local/Image_not_available.png
+    name: Back Patio
+    camera_image: camera.lot125_back_porch
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
+    entity: camera.lot125_courtyard
+    image: https://demo.home-assistant.io/stub_config/bedroom.png
+    name: Courtyard
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
+    image: Image_not_available.png
+    camera_image: camera.lot125_doorbell
+    name: Doorbell
+    entity: camera.lot125_doorbell
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
+    image: https://demo.home-assistant.io/stub_config/bedroom.png
+    camera_image: Front door approach
+    entity: camera.lot125_front_door_approach
+    name: Footpath
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
+    entity: camera.lot125_garage
+    image: https://demo.home-assistant.io/stub_config/bedroom.png
+    name: Garage
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
+    entity: camera.lot125_kids_room
+    image: https://demo.home-assistant.io/stub_config/bedroom.png
+    camera_image: camera.lot125_kids_room
+    name: Kids Room
+columns: 2

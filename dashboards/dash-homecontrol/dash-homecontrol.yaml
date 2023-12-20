@@ -1,4 +1,4 @@
-title: HomeControlBro
+title: HomeControl
 button_card_templates: !include_dir_named ../common/button-card-templates
 views:
   - title: Main
@@ -6,6 +6,8 @@ views:
     panel: false
     cards:
       - !include ../common/cards/camera-motion-sensors.yaml
+      - !include ../common/cards/people.yaml
+      - !include ../common/cards/climate.yaml
       - !include ../common/cards/christmas-lights.yaml
       - !include ../common/cards/office-lighting.yaml
       - type: vertical-stack
@@ -13,5 +15,6 @@ views:
           - !include ../common/cards/master-bedroom-lights.yaml
           - !include ../common/cards/master-bedroom-fan.yaml
       - !include ../common/cards/outside-lighting.yaml
-      - !include ../common/cards/climate.yaml
-      - !include ../common/cards/people.yaml
+      - !include ../common/cards/sprinklers.yaml
+      - !include ../common/cards/weather.yaml
+      - !include ../common/cards/cameras.yaml

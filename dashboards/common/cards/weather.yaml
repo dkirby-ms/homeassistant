@@ -1,0 +1,10 @@
+type: grid
+square: false
+cards:
+  - show_current: true
+    show_forecast: true
+    type: weather-forecast
+    entity: weather.home
+    secondary_info_attribute: humidity
+  - type: custom:horizon-card
+columns: 1
