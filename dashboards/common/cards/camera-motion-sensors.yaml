@@ -1,6 +1,6 @@
 type: custom:button-card
 template: container
-name: Alerts
+name: Camera Alerts
 custom_fields:
   buttons:
     card:
