@@ -5,7 +5,7 @@ variables:
   mobile_battery_sensor: null
   mobile_battery_state: null
   proximity_sensor: null
-color_type: icon
+  color_type: icon
 tap_action:
   action: none
 aspect_ratio: 1/1
