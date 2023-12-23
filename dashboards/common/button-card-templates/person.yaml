@@ -28,11 +28,11 @@ state:
           - border-color: "#EF4F1A"
 styles:
   card:
-    - background-color: white
+    - background-color: dark gray
     - border-radius: 5%
     - padding: 5%
-    - color: gray
-    - font-size: 12px
+    - color: light gray
+    - font-size: 14px
     - text-shadow: 0px 0px 0px black
     - text-transform: capitalize
     - justify-self: end
@@ -61,7 +61,8 @@ styles:
     status:
       - align-self: start
       - justify-self: end
-      - color: gray
+      - color: light gray
+      - font-size: 16px
 custom_fields:
   icon: >
     [[[ return entity === undefined ? null : `<img

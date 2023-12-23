@@ -12,11 +12,6 @@ custom_fields:
           template: standard
           icon: mdi:pine-tree
           type: custom:button-card
-        - entity: switch.node_4
-          name: Lightshow
-          template: standard
-          icon: mdi:string-lights
-          type: custom:button-card
         - entity: switch.node_4_2
           name: String Lights
           template: standard

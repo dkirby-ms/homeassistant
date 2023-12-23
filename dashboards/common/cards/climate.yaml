@@ -11,11 +11,9 @@ custom_fields:
           template: bigtemp
           entity: climate.front
           variables:
-            device_name: Front
             color: "dark gray"
         - type: "custom:button-card"
           template: bigtemp
           entity: climate.rear_tstat
           variables:
-            device_name: Rear
             color: "dark gray"
