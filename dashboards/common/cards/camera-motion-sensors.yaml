@@ -4,25 +4,36 @@ name: Camera Alerts
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: vertical-stack
       cards:
-        - entity: binary_sensor.lot125_doorbell_motion
-          name: Doorbell
-          template: alerter-dual
-          type: custom:button-card
-        - entity: binary_sensor.lot125_back_patio_motion
-          name: Back Patio
-          template: alerter-dual
-          type: custom:button-card
-        - entity: binary_sensor.lot125_courtyard_motion
-          name: Courtyard
-          template: alerter-dual
-          type: custom:button-card
-        - entity: binary_sensor.lot125_garage_motion
-          name: Garage
-          template: alerter-dual
-          type: custom:button-card
-        - entity: binary_sensor.lot125_front_door_approach_motion
-          name: Front Path
-          template: alerter-dual
-          type: custom:button-card
+        - type: horizontal-stack
+          cards:
+            - entity: binary_sensor.lot125_driveway_motion
+              name: Driveway
+              template: alerter-dual
+              type: custom:button-card
+            - entity: binary_sensor.lot125_doorbell_motion
+              name: Doorbell
+              template: alerter-dual
+              type: custom:button-card
+            - entity: binary_sensor.lot125_back_patio_motion
+              name: Back Patio
+              template: alerter-dual
+              type: custom:button-card
+            - entity: binary_sensor.lot125_courtyard_motion
+              name: Courtyard
+              template: alerter-dual
+              type: custom:button-card
+            - entity: binary_sensor.lot125_garage_motion
+              name: Garage
+              template: alerter-dual
+              type: custom:button-card
+            - entity: binary_sensor.lot125_front_door_approach_motion
+              name: Front Path
+              template: alerter-dual
+              type: custom:button-card
+        # - type: markdown
+        #   content: |-
+        #     * some task I was thinking of...
+        #     * another task...
+        #     * a related thought...

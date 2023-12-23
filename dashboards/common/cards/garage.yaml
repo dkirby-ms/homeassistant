@@ -1,0 +1,9 @@
+type: custom:button-card
+template: container
+color: "#A7A7A7"
+name: Garage
+custom_fields:
+  buttons:
+    card:
+      type: grid
+      grid-template-areas: "i cover "

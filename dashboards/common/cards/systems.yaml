@@ -1,0 +1,37 @@
+type: custom:button-card
+template: container
+name: Systems
+color: "#6699cc"
+tap_action: none
+custom_fields:
+  buttons:
+    card:
+      type: horizontal-stack
+      cards:
+        - entity: switch.infestissumam
+          name: Wifi
+          template: alerter
+          type: custom:button-card
+          icon: mdi:wifi
+          tap_action:
+            action: none
+          variables:
+            color: dim green
+        - entity: switch.basils_network
+          name: Wifi
+          template: alerter
+          type: custom:button-card
+          icon: mdi:wifi
+          tap_action:
+            action: none
+          variables:
+            color: dim green
+        - entity: switch.ajguestnet
+          name: Wifi
+          template: alerter
+          type: custom:button-card
+          icon: mdi:wifi
+          tap_action:
+            action: none
+          variables:
+            color: dim green

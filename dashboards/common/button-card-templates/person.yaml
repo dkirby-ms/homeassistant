@@ -1,7 +1,7 @@
 variables:
   hide: false
   color: "rgba(0,0,0,0.3)"
-  person: person.dale_kirby
+  person: null
   mobile_battery_sensor: null
   mobile_battery_state: null
   proximity_sensor: null
@@ -32,13 +32,13 @@ styles:
     - border-radius: 5%
     - padding: 5%
     - color: gray
-    - font-size: 10px
+    - font-size: 12px
     - text-shadow: 0px 0px 0px black
     - text-transform: capitalize
     - justify-self: end
     - align-self: middle
   grid:
-    - grid-template-areas: '"icon status" "n n" "battery proximity" "wifi ss" "sd sd"'
+    - grid-template-areas: '"icon status" "n n" "battery proximity" "sd sd"'
     - grid-template-columns: 2fr 1fr
     - grid-template-rows: 1fr min-content min-content min-content min-content
   name:

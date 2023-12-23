@@ -1,3 +1,7 @@
+variables:
+  color_initial: var(--paper-item-icon-active-color)
+  color_extended: rgba(240,52,52, 0.9)
+  color_seconds: 60
 template: standard
 show_last_changed: true
 color_type: icon
@@ -27,10 +31,6 @@ extra_styles: |
       }
     }
   `]]]
-variables:
-  color_initial: var(--paper-item-icon-active-color)
-  color_extended: rgba(240,52,52, 0.9)
-  color_seconds: 60
 state:
   - value: "on"
     id: value_on

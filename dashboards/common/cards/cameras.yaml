@@ -5,6 +5,14 @@ cards:
     show_name: true
     camera_view: auto
     type: picture-entity
+    entity: camera.lot125_driveway
+    image: /local/Image_not_available.png
+    name: Driveway
+    camera_image: camera.driveway
+  - show_state: false
+    show_name: true
+    camera_view: auto
+    type: picture-entity
     entity: camera.lot125_back_patio
     image: /local/Image_not_available.png
     name: Back Patio
