@@ -1,34 +1,18 @@
 type: custom:button-card
 template: container
-color: "#A7A7A7"
+color: "#669999"
 name: Garage
 custom_fields:
   buttons:
     card:
-      type: custom:button-card
-      columns: 3
-      styles:
-        grid:
-          - grid-template-areas: >-
-              "cover cover light obstruction"
-          - grid-template-columns: 1fr 1fr 1fr 1fr
-        custom_fields:
-          cover:
-          light:
-          obstruction:
-      custom_fields:
-        cover:
-          card:
-            type: custom:button-card
-            template: standard
-            entity: cover.ratgdo_70393_door
-        light:
-          card:
-            type: custom:button-card
-            template: standard
-            entity: light.ratgdo_70393_light
-        obstruction:
-          card:
-            type: custom:button-card
-            template: alerter-dual
-            entity: binary_sensor.ratgdo_70393_obstruction
+      type: horizontal-stack
+      cards:
+        - type: custom:button-card
+          template: standard
+          entity: cover.ratgdo_70393_door
+        - type: custom:button-card
+          template: standard
+          entity: light.ratgdo_70393_light
+        - type: custom:button-card
+          template: alerter-dual
+          entity: binary_sensor.ratgdo_70393_obstruction

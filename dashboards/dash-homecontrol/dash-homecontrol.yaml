@@ -10,10 +10,7 @@ views:
       - !include ../common/cards/people.yaml
       - !include ../common/cards/climate.yaml
       - !include ../common/cards/office-lighting.yaml
-      - type: vertical-stack
-        cards:
-          - !include ../common/cards/master-bedroom-lights.yaml
-          - !include ../common/cards/master-bedroom-fan.yaml
+      - !include ../common/cards/master-bedroom-fan.yaml
       - !include ../common/cards/garage.yaml
       - !include ../common/cards/outside-lighting.yaml
       - !include ../common/cards/sprinklers.yaml

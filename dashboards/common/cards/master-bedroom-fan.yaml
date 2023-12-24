@@ -1,6 +1,7 @@
 type: custom:button-card
 template: container
 color: "#D2C779"
+name: Master Bedroom
 custom_fields:
   buttons:
     card:
