@@ -21,8 +21,6 @@ state:
           - border-color: "#77c66e"
   - value: not_home
     styles:
-      card:
-        - background-color: "#dedede"
       custom_fields:
         icon:
           - border-color: "#EF4F1A"
@@ -78,12 +76,12 @@ custom_fields:
       if (entity.state =='home') { 
       return `<ha-icon 
         icon="mdi:home"
-        style="width: 20px; height: 20px; color: 888888;">
+        style="width: 20px; height: 20px; color: '#888888';">
         </ha-icon><span> ${entity.state}</span>`;
       } else {
       return `<ha-icon 
         icon="mdi:map-marker-radius"
-        style="width: 20px; height: 20px; color: 888888;">
+        style="width: 20px; height: 20px; color: '#888888';">
         </ha-icon><span> ${entity.state}</span>`;
       }
     ]]]

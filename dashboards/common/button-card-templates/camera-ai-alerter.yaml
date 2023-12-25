@@ -1,0 +1,9 @@
+variables:
+  aisensor: null
+template: alerter-dual
+show_last_changed: false
+show_label: true
+label: >
+  [[[ 
+    return `<span>${states[variables.aisensor].state}</span>`
+  ]]]

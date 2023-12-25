@@ -1,1 +1,25 @@
 # MQTT -
+- sensor:
+    name: Driveway AI Memo
+    state_topic: BlueIris/Driveway/Alert
+    value_template: "{{ value_json.object }}"
+- sensor:
+    name: Courtyard AI Memo
+    state_topic: BlueIris/Courtyard/Alert
+    value_template: "{{ value_json.object }}"
+- sensor:
+    name: Patio AI Memo
+    state_topic: BlueIris/BackPatio/Alert
+    value_template: "{{ value_json.object }}"
+- sensor:
+    name: Doorbell AI Memo
+    state_topic: BlueIris/Doorbell/Alert
+    value_template: "{{ value_json.object }}"
+- sensor:
+    name: Front Path AI Memo
+    state_topic: BlueIris/FrontApproach1/Alert
+    value_template: "{{ value_json.object }}"
+# - image:
+#     name: Driveway AI Image
+#     url_topic: BlueIris/Driveway/Alert
+#     url_template: "http://cambox:81/alerts/{{ value_json.id }}&fulljpeg"
