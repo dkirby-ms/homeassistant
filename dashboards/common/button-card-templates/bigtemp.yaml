@@ -1,19 +1,19 @@
 variables:
   hide: false
-  color: 'rgba(0,0,0,0.3)'
+  color: "rgba(0,0,0,0.3)"
   device_name: Set at
   alt_humidity_entity: null
   alt_humidity_attr: null
-  color_setpoint_off: 'rgba(0,0,0,0.4)'
-  color_setpoint_idle: 'rgba(144,238,144,0.6)'
-  color_setpoint_cool: 'rgba(0,0,255,0.6)'
-  color_setpoint_heat: 'rgba(255,0,0,0.6)'
-  color_setpoint_wait: 'rgba(255,255,0,0.6)'
-  icon_setpoint_off: 'mdi:thermometer-off'
+  color_setpoint_off: "rgba(0,0,0,0.4)"
+  color_setpoint_idle: "rgba(144,238,144,0.6)"
+  color_setpoint_cool: "rgba(0,0,255,0.6)"
+  color_setpoint_heat: "rgba(255,0,0,0.6)"
+  color_setpoint_wait: "rgba(255,255,0,0.6)"
+  icon_setpoint_off: "mdi:thermometer-off"
   icon_setpoint_idle: null
-  icon_setpoint_cool: 'mdi:snowflake'
-  icon_setpoint_heat: 'mdi:fire'
-  icon_setpoint_wait: 'mdi:timer-sand'
+  icon_setpoint_cool: "mdi:snowflake"
+  icon_setpoint_heat: "mdi:fire"
+  icon_setpoint_wait: "mdi:timer-sand"
   text_setpoint_off: white
   text_setpoint_idle: black
   text_setpoint_cool: white
@@ -257,7 +257,7 @@ styles:
     - transform-origin: right bottom
     - bottom: 0
     - right: 0
-    - z-index: 10
+    - z-index: 2
   custom_fields:
     device:
       - text-shadow: 0 0 0.2em black
