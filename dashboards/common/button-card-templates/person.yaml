@@ -70,18 +70,18 @@ custom_fields:
     [[[
       if (entity.state == 'not_home') { 
       return `<ha-icon icon="mdi:home-export-outline"
-        style="width: 20px; height: 20px; color: '#888888';">
+        style="width: 20px; height: 20px; color: 888888;">
         </ha-icon><span> Away</span>`;
       } 
       if (entity.state =='home') { 
       return `<ha-icon 
         icon="mdi:home"
-        style="width: 20px; height: 20px; color: '#888888';">
+        style="width: 20px; height: 20px; color: 888888;">
         </ha-icon><span> ${entity.state}</span>`;
       } else {
       return `<ha-icon 
         icon="mdi:map-marker-radius"
-        style="width: 20px; height: 20px; color: '#888888';">
+        style="width: 20px; height: 20px; color: 888888;">
         </ha-icon><span> ${entity.state}</span>`;
       }
     ]]]
@@ -89,7 +89,7 @@ custom_fields:
     [[[
       return `<ha-icon
         icon="mdi:map-marker-distance"
-        style="width: 20px; height: 20px; color: #888888;">
+        style="width: 20px; height: 20px; color: 888888;">
         </ha-icon>  <span>\<span style="color: var(--text-color-sensor);">${states[variables.proximity_sensor].state} mi</span></span>`
     ]]]
   battery: |
@@ -97,12 +97,12 @@ custom_fields:
       if (states[variables.mobile_battery_state].state =='charging') { 
         return `<ha-icon
         icon="mdi:battery-charging"
-        style="width: 20px; height: 20px; color: #888888;">
+        style="width: 20px; height: 20px; color: 888888;">
         </ha-icon> <span><span style="color: var(--text-color-sensor);">${states[variables.mobile_battery_sensor].state}% battery</span></span>`;
       } else {
         return `<ha-icon
         icon="mdi:battery"
-        style="width: 20px; height: 20px; color: #888888;">
+        style="width: 20px; height: 20px; color: 888888;">
         </ha-icon> <span><span style="color: var(--text-color-sensor);">${states[variables.mobile_battery_sensor].state}% battery</span></span>`;
       }
     ]]]

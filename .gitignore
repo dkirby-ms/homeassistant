@@ -11,3 +11,5 @@ home-assistant.log*
 .HA_VERSION
 .shopping_list.json
 o365_storage/*
+go2rtc-1.8.1
+go2rtc.yaml

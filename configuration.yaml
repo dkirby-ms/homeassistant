@@ -38,6 +38,7 @@ mqtt: !include mqtt.yaml
 o365: !include o365.yaml
 python_script:
 
+# Proximity sensors for people presence cards
 proximity:
   dale_home:
     devices:
