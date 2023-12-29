@@ -14,6 +14,5 @@ views:
       - !include ../common/cards/garage.yaml
       - !include ../common/cards/outside-lighting.yaml
       - !include ../common/cards/sprinklers.yaml
-      #- !include ../common/cards/systems.yaml
       - !include ../common/cards/weather.yaml
       - !include ../common/cards/cameras.yaml

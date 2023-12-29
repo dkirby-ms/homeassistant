@@ -5,7 +5,9 @@ name: Christmas Lights
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 4
+      square: true
       cards:
         - entity: switch.mini_smart_plug_2
           name: Tree

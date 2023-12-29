@@ -5,7 +5,9 @@ name: Office
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 2
+      square: false
       cards:
         - entity: light.mini_smart_plug
           name: Corner Lamp

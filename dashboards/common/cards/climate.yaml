@@ -5,7 +5,9 @@ name: Climate Control
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 3
+      square: false
       cards:
         - type: "custom:button-card"
           template: bigtemp

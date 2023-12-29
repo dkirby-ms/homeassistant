@@ -5,7 +5,9 @@ name: Master Bedroom
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 1
+      square: false
       cards:
         - type: custom:button-card
           template: presets-off-low-med-hi

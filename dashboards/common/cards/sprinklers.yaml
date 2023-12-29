@@ -6,7 +6,8 @@ tap_action: none
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 7
       cards:
         - entity: switch.rain_bird_sprinkler_1
           name: Zone 1

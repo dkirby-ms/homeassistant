@@ -5,7 +5,8 @@ name: People
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 2
       cards:
         - type: "custom:button-card"
           template: person

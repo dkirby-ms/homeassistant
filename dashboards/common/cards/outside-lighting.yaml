@@ -5,7 +5,9 @@ name: Outside
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 4
+      square: false
       cards:
         - entity: light.s2_on_off_switch
           name: Porch Light

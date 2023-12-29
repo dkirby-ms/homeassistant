@@ -5,7 +5,9 @@ name: Garage
 custom_fields:
   buttons:
     card:
-      type: horizontal-stack
+      type: grid
+      columns: 3
+      square: true
       cards:
         - type: custom:button-card
           template: standard
