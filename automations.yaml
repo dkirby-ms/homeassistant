@@ -334,8 +334,8 @@
       entity_id:
         - cover.ratgdo_70393_door
       for:
-        hours: 0
-        minutes: 1
+        hours: 1
+        minutes: 0
         seconds: 0
       to: open
   condition: []
@@ -346,7 +346,7 @@
     - alias: "Notify mobile devices"
       service: notify.mobile_devices
       data:
-        message: "Garage door has been open for 2 hours. Close it?"
+        message: "WARNING: Garage door has been open for one hour. Close it?"
         data:
           actions:
             - action: "{{ action_close }}"
