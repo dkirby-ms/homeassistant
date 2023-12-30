@@ -5,14 +5,15 @@ views:
     path: main
     panel: false
     cards:
-      - !include ../common/cards/christmas-lights.yaml
       - !include ../common/cards/camera-motion-sensors.yaml
+      - !include ../common/cards/christmas-lights.yaml
       - !include ../common/cards/people.yaml
       - !include ../common/cards/climate.yaml
-      - !include ../common/cards/office-lighting.yaml
+      - !include ../common/cards/office.yaml
       - !include ../common/cards/master-bedroom-fan.yaml
       - !include ../common/cards/garage.yaml
       - !include ../common/cards/outside-lighting.yaml
       - !include ../common/cards/sprinklers.yaml
       - !include ../common/cards/weather.yaml
       - !include ../common/cards/cameras.yaml
+      #- !include ../common/cards/unifi.yaml
