@@ -5,17 +5,34 @@ name: Climate Control
 custom_fields:
   buttons:
     card:
-      type: grid
-      columns: 3
-      square: false
-      cards:
-        - type: "custom:button-card"
-          template: bigtemp
-          entity: climate.front
-          variables:
-            color: "dark gray"
-        - type: "custom:button-card"
-          template: bigtemp
-          entity: climate.rear_tstat
-          variables:
-            color: "dark gray"
+      type: custom:button-card
+      styles:
+        card:
+          - background-color: rgba(0,0,0,0.5)
+          - height: 80px
+        grid:
+          - grid-template-areas: "front rear"
+          - grid-template-columns: 1fr 1fr
+        custom_fields:
+          front:
+            - position: absolute
+            - left: 12px
+          rear:
+            - position: absolute
+            - left: 150px
+
+      custom_fields:
+        front:
+          card:
+            type: "custom:button-card"
+            template: bigtemp
+            entity: climate.front
+            variables:
+              color: "dark gray"
+        rear:
+          card:
+            type: "custom:button-card"
+            template: bigtemp
+            entity: climate.rear_tstat
+            variables:
+              color: "dark gray"

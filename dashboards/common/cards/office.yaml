@@ -5,37 +5,42 @@ name: Office
 custom_fields:
   buttons:
     card:
-      type: grid
-      columns: 2
-      square: false
-      cards:
-        - entities:
-            - entity: sensor.multisensor_6_air_temperature
-              name: Temperature
-              icon: mdi:thermometer
-            - entity: sensor.multisensor_6_humidity
-              name: Humidity
-              icon: mdi:cloud-percent
-            - entity: sensor.multisensor_6_illuminance
-              name: Lx
-          type: custom:mini-graph-card
-        - type: grid
-          columns: 2
-          square: false
-          cards:
-            - type: custom:button-card
-              template: standard
-              entity: light.s2_dimmer_switch
-            - type: custom:button-card
-              template: standard
-              entity: light.s2_on_off_switch_3
-            - entity: light.mini_smart_plug
-              name: Corner Lamp
-              template: standard
-              icon: mdi:lamp
-              type: custom:button-card
-            - entity: light.3_bulb_desk_lamp
-              name: Desk Lamp
-              template: standard
-              icon: mdi:desk-lamp
-              type: custom:button-card
+      type: custom:button-card
+      styles:
+        card:
+          - background-color: rgba(0,0,0,0.5)
+        grid:
+          - grid-template-areas: '"graph lights"'
+          - grid-template-columns: 1fr 2fr
+      custom_fields:
+        graph:
+          card:
+            type: custom:mini-graph-card
+            name: Temp
+            entities:
+              - entity: sensor.multisensor_6_air_temperature
+                name: Office
+                show_legend: false
+              - entity: sensor.multisensor_6_air_temperature_2
+                name: Bathroom
+                show_legend: false
+            show:
+              graph: line
+              label: false
+        lights:
+          card:
+            type: grid
+            columns: 2
+            square: false
+            cards:
+              - type: custom:button-card
+                template: standard
+                entity: light.s2_dimmer_switch
+              - type: custom:button-card
+                template: standard
+                entity: light.s2_on_off_switch_3
+              - entity: light.mini_smart_plug
+                name: Corner Lamp
+                template: standard
+                icon: mdi:lamp
+                type: custom:button-card
