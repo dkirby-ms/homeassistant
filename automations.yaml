@@ -298,30 +298,6 @@
       device_id: 9252f67513053e4bb4e203f0e8e70ed8
     data: {}
   mode: single
-- id: '1703882579510'
-  alias: At 10:30pm close garage if open
-  description: ''
-  trigger:
-  - platform: time
-    at: '22:30:00'
-  condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: cover.ratgdo_70393_door
-      state: open
-    - condition: state
-      entity_id: cover.ratgdo_70393_door
-      state: opening
-  action:
-  - service: cover.close_cover
-    target:
-      entity_id: cover.ratgdo_70393_door
-    data: {}
-  - service: notify.mobile_devices
-    data:
-      message: It is 10:30pm. Automatically closing the garage door.
-  mode: single
 - id: '1703883080821'
   alias: Notify of open garage
   description: ''
