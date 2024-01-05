@@ -10,6 +10,7 @@ views:
       - !include ../common/cards/people.yaml
       - !include ../common/cards/climate.yaml
       - !include ../common/cards/office.yaml
+      - !include ../common/cards/rooms.yaml
       - !include ../common/cards/master-bedroom-fan.yaml
       - !include ../common/cards/garage.yaml
       - !include ../common/cards/outside-lighting.yaml

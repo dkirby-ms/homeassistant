@@ -1,6 +1,13 @@
 type: custom:button-card
 template: container
-name: Camera Alerts
+variables:
+  bannerText: >
+    [[[ 
+      var text = "Detections today: " + states['counter.car_count'].state + " vehicles  |  "
+      text = text + states['counter.person_count'].state + " people"
+      return text 
+    ]]]
+name: "[[[ return variables.bannerText ]]]"
 custom_fields:
   buttons:
     card:
@@ -10,7 +17,7 @@ custom_fields:
       cards:
         - entity: binary_sensor.lot125_driveway_motion
           name: Driveway
-          template: camera-ai-alerter
+          template: alerter-dual
           variables:
             aisensor: sensor.driveway_ai_memo
           type: custom:button-card

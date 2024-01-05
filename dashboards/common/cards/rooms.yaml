@@ -1,0 +1,21 @@
+type: custom:button-card
+template: container
+color: "#F5A623"
+name: Room Lighting
+custom_fields:
+  buttons:
+    card:
+      type: grid
+      columns: 2
+      square: false
+      cards:
+        - entity: light.studio_light_2
+          name: Studio
+          template: standard
+          icon: mdi:lightbulb
+          type: custom:button-card
+        - entity: light.s2_dimmer_switch_3
+          name: Kids
+          template: standard
+          icon: mdi:lightbulb
+          type: custom:button-card

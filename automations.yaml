@@ -349,3 +349,56 @@
       light_target:
         entity_id: light.s2_on_off_switch_3
       no_motion_wait: 15
+- &id001
+  id: '1704136086849'
+  alias: Count vehicles
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: BlueIris/Driveway/Alert
+  condition:
+  - condition: or
+    conditions:
+    - condition: template
+      value_template: '{{ "car" in trigger.payload_json.object }}'
+    - condition: template
+      value_template: '{{ "truck" in trigger.payload_json.object }}'
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.car_count
+    data: {}
+  mode: single
+- *id001
+- id: '1704144178612'
+  alias: Count people
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: BlueIris/Driveway/Alert
+  condition:
+  - condition: or
+    conditions:
+    - condition: template
+      value_template: '{{ "person" in trigger.payload_json.object }}'
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.person_count
+  mode: single
+- id: '1704205579064'
+  alias: Reset detection counters
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    target:
+      entity_id:
+      - counter.person_count
+      - counter.car_count
+    data: {}
+  mode: single

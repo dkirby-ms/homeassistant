@@ -18,7 +18,6 @@ homeassistant:
   allowlist_external_urls: []
   media_dirs:
     media: "/media"
-  legacy_templates: false
 
 # Configure ssl - cert comes from LetsEncrypt Addon
 http:
@@ -50,6 +49,21 @@ proximity:
       - device_tracker.iphone
     tolerance: 50
     unit_of_measurement: mi
+
+# # History sensors
+# sensor:
+#   - platform: history_stats
+#     name: Total cars counted
+#     entity_id: counter.car_count
+#     type: count
+#     start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+#     end: "{{ now() }}"
+#   - platform: history_stats
+#     name: Total people counted
+#     entity_id: counter.person_count
+#     type: count
+#     start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+#     end: "{{ now() }}"
 
 # Notification groups
 notify:
