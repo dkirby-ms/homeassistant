@@ -30,7 +30,7 @@ custom_fields:
         lights:
           card:
             type: grid
-            columns: 2
+            columns: 3
             square: false
             cards:
               - type: custom:button-card

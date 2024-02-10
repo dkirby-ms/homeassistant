@@ -11,10 +11,10 @@ custom_fields:
       cards:
         - type: custom:button-card
           template: standard
-          entity: cover.ratgdo_70393_door
+          entity: cover.ratgdo_65441_door
         - type: custom:button-card
           template: standard
-          entity: light.ratgdo_70393_light
+          entity: light.ratgdo_65441_light
         - type: custom:button-card
           template: alerter-dual
-          entity: binary_sensor.ratgdo_70393_obstruction
+          entity: binary_sensor.ratgdo_65441_obstruction

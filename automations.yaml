@@ -305,7 +305,7 @@
   trigger:
   - platform: state
     entity_id:
-    - cover.ratgdo_70393_door
+    - cover.ratgdo_65441_door
     for:
       hours: 1
       minutes: 0
@@ -338,7 +338,7 @@
       sequence:
       - service: cover.close_cover
         target:
-          entity_id: cover.ratgdo_70393_door
+          entity_id: cover.ratgdo_65441_door
 - id: '1703977319860'
   alias: Office bathroom vanity light on with motion
   description: ''
@@ -401,4 +401,32 @@
       - counter.person_count
       - counter.car_count
     data: {}
+  mode: single
+- id: '1704981942366'
+  alias: Garage Sconces off at 0215
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:15:00
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.above_garage_sconces
+  mode: single
+- id: '1704981996122'
+  alias: Garage Sconces on at sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.above_garage_sconces
   mode: single

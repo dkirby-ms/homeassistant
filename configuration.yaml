@@ -37,18 +37,18 @@ mqtt: !include mqtt.yaml
 o365: !include o365.yaml
 python_script:
 
-# Proximity sensors for people presence cards
-proximity:
-  dale_home:
-    devices:
-      - device_tracker.sm_s918u
-    tolerance: 50
-    unit_of_measurement: mi
-  cc_home:
-    devices:
-      - device_tracker.iphone
-    tolerance: 50
-    unit_of_measurement: mi
+# # Proximity sensors for people presence cards
+# proximity:
+#   dale_home:
+#     devices:
+#       - device_tracker.sm_s918u
+#     tolerance: 50
+#     unit_of_measurement: mi
+#   cc_home:
+#     devices:
+#       - device_tracker.iphone
+#     tolerance: 50
+#     unit_of_measurement: mi
 
 # # History sensors
 # sensor:
