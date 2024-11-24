@@ -272,11 +272,11 @@
       light_target:
         entity_id: light.mini_smart_plug
 - id: '1702871902204'
-  alias: Turn fan on at 10:35pm
+  alias: Turn fan on at 10:15pm
   description: ''
   trigger:
   - platform: time
-    at: '22:40:00'
+    at: '22:15:00'
   condition: []
   action:
   - service: fan.turn_on
@@ -429,4 +429,40 @@
     data: {}
     target:
       entity_id: light.above_garage_sconces
+  mode: single
+- id: '1715569285577'
+  alias: AC down at night (REAR)
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition:
+  - condition: state
+    entity_id: climate.rear_tstat
+    attribute: temperature
+    state: '77'
+  action:
+  - service: climate.set_temperature
+    target:
+      device_id: e8c3226fd553a179fe041c55bff0a7d6
+    data:
+      temperature: 76
+  mode: single
+- id: '1715569336285'
+  alias: AC up in morning (REAR)
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition:
+  - condition: state
+    entity_id: climate.rear_tstat
+    attribute: temperature
+    state: '76'
+  action:
+  - service: climate.set_temperature
+    target:
+      device_id: e8c3226fd553a179fe041c55bff0a7d6
+    data:
+      temperature: 77
   mode: single
