@@ -6,8 +6,8 @@ views:
     panel: false
     cards:
       - !include ../common/cards/camera-motion-sensors.yaml
-      #- !include ../common/cards/christmas-lights.yaml
-      - !include ../common/cards/people.yaml
+      - !include ../common/cards/christmas-lights.yaml
+      #- !include ../common/cards/people.yaml
       - !include ../common/cards/climate.yaml
       - !include ../common/cards/office.yaml
       - !include ../common/cards/rooms.yaml
