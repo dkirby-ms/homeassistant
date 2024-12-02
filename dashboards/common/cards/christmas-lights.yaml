@@ -6,7 +6,7 @@ custom_fields:
   buttons:
     card:
       type: grid
-      columns: 4
+      columns: 5
       square: true
       cards:
         - entity: switch.mini_smart_plug_2
@@ -14,10 +14,20 @@ custom_fields:
           template: standard
           icon: mdi:pine-tree
           type: custom:button-card
-        - entity: switch.node_4_2
-          name: String Lights
+        - entity: switch.node_4
+          name: String Lights L
           template: standard
           icon: mdi:string-lights
+          type: custom:button-card
+        - entity: switch.outdoor_smart_plug
+          name: String Lights R
+          template: standard
+          icon: mdi:string-lights
+          type: custom:button-card
+        - entity: switch.node_4_2
+          name: Maple
+          template: standard
+          icon: mdi:tree
           type: custom:button-card
         - entity: light.smart_rgbtw_bulb_3
           name: Sconce L
