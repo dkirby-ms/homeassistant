@@ -19,6 +19,11 @@ custom_fields:
           template: standard
           icon: mdi:light-flood-down
           type: custom:button-card
+        - entity: switch.mini_smart_plug_4
+          name: Courtyard Fairy Lights
+          template: standard
+          icon: mdi:string-lights
+          type: custom:button-card
         - entity: light.smart_rgbtw_bulb_3
           name: Garage Sconce L
           icon: mdi:lightbulb

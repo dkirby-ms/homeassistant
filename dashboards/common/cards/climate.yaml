@@ -1,6 +1,6 @@
 type: custom:button-card
 template: container
-color: "#A7A7A7"
+color: "#A7A7A6"
 name: Climate Control
 custom_fields:
   buttons:

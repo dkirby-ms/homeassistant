@@ -6,7 +6,7 @@ homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: !secret elevation
-  unit_system: imperial
+  unit_system: US
   currency: USD
   country: US
   language: en
